@@ -9,7 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var userGuessTextField: UITextField!
 
+    @IBOutlet var resultLabel: UILabel!
+    
+    @IBAction func guess(sender: AnyObject) {
+        
+        let diceRoll = String(arc4random_uniform(6))
+        
+        print(diceRoll)
+        
+        if diceRoll == userGuessTextField.text {
+            resultLabel.text = "CORRECT, you WINNN"
+            userGuessTextField.text = ""
+        }else if userGuessTextField.text == "" {
+            resultLabel.text = "Please enter a number!!!"
+        }else {
+            resultLabel.text = "WRONG, it was a " + diceRoll
+            userGuessTextField.text = ""
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
