@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func guess(sender: AnyObject) {
         
-        let diceRoll = String(arc4random_uniform(6))
+        let diceRoll = String(arc4random_uniform(7))
         
         print(diceRoll)
         
